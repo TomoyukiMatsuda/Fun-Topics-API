@@ -20,9 +20,15 @@ class CommonTopicService(
         //   本当は id 自動的に生成されるようにしたい
         commonTopicRepository.findAll().forEach {
             if (it.id == commonTopic.id) {
-                throw IllegalArgumentException("すでに存在するIDです")
+                throw IllegalArgumentException("すでに存在するIDです ${it.id}")
             }
         }
         commonTopicRepository.create(commonTopic)
+    }
+
+    @Transactional
+    fun deleteCommonTopic(id: Int) {
+        commonTopicRepository.find(id) ?: throw IllegalAccessException("存在しない共通トピックID: $id")
+        commonTopicRepository.delete(id)
     }
 }

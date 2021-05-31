@@ -32,4 +32,9 @@ class CommonTopicController(
             )
         )
     }
+
+    @DeleteMapping("/delete/{common_topic_id}")
+    fun delete(@PathVariable("common_topic_id") id: Int) {
+        commonTopicService.deleteCommonTopic(id)
+    }
 }
