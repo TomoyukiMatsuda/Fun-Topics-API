@@ -4,3 +4,4 @@ data class CommonTopicRes(
     val id: Int,
     val content: String
 )
+

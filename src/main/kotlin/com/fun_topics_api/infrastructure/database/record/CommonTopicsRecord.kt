@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 
 data class CommonTopicsRecord(
     var id: Int? = null,
+    var content: String? = null,
     var createdAt: LocalDateTime? = null,
-    var updatedAt: LocalDateTime? = null,
-    var content: String? = null
+    var updatedAt: LocalDateTime? = null
 )
